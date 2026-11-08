@@ -1,0 +1,28 @@
+# Local services for development. App runs on the host with `npm run dev`.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: saas_starter
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d saas_starter"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  # Catches magic-link and invitation emails: http://localhost:8025
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    profiles: ["mail"]
+
+volumes:
+  pgdata:
