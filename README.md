@@ -20,7 +20,7 @@ It is deliberately small. Each piece is done properly rather than every possible
 Captured from a local run with the seed data (Acme on Free, Globex on Pro). All people and emails are fictional.
 
 ![Projects page at the Free plan limit](docs/screenshots/projects.png)
-*Projects in Acme (Free) at 3 / 3: the usage meter is full and the create form is replaced by an upgrade link.*
+*Projects in Acme (Free) at 3 / 3: the usage meter is full, with an upgrade link, and the new-project form points to the plans instead.*
 
 ![Members page as owner with a pending invitation](docs/screenshots/members.png)
 *Members as the owner: roles can be changed per person, and an open invitation counts toward seats until it is accepted or revoked.*
